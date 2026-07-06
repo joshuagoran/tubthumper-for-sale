@@ -1,161 +1,310 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tubthumper — For Sale</title>
-<style>
-  :root { --bg:#1d3a2a; --card:#fff; --ink:#1a2533; --muted:#5b6b7d; --accent:#3f8a5c; }
-  * { box-sizing:border-box; margin:0; padding:0; }
-  body { font:16px/1.6 system-ui,sans-serif; color:var(--ink); background:#eef2f6; }
-  header { background:var(--bg); color:#fff; padding:2rem 1rem; text-align:center; }
-  header h1 { font-size:2rem; }
-  header .price { font-size:1.4rem; color:#8fd3a6; margin-top:.25rem; }
-  header .sub { color:#a8c2b1; margin-top:.25rem; }
-  main { max-width:880px; margin:0 auto; padding:1rem; }
-  section { background:var(--card); border-radius:10px; padding:1.25rem 1.5rem; margin:1rem 0; box-shadow:0 1px 4px rgba(0,0,0,.08); }
-  h2 { font-size:1.25rem; margin-bottom:.75rem; color:var(--accent); }
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tubthumper — 1990 Dana 24 For Sale</title>
+  <style>
+    :root {
+      --bg: #1d3a2a;
+      --card: #fff;
+      --ink: #1a2533;
+      --muted: #5b6b7d;
+      --accent: #3f8a5c;
+    }
 
-  /* carousel: native scroll-snap, no JS lib */
-  .gallery { position:relative; }
-  .carousel { display:flex; overflow-x:auto; scroll-snap-type:x mandatory; scroll-behavior:smooth; border-radius:10px; scrollbar-width:none; }
-  .carousel::-webkit-scrollbar { display:none; }
-  .carousel img { flex:0 0 100%; scroll-snap-align:center; width:100%; height:clamp(240px,55vw,520px); object-fit:contain; border-radius:10px; background:#12251b; }
-  .nav { position:absolute; top:50%; transform:translateY(-50%); border:0; background:rgba(0,0,0,.45); color:#fff; font-size:1.8rem; line-height:1; width:2.4rem; height:2.4rem; border-radius:50%; cursor:pointer; display:grid; place-items:center; }
-  .nav:hover { background:rgba(0,0,0,.65); }
-  .nav.prev { left:.5rem; } .nav.next { right:.5rem; }
-  .counter { position:absolute; bottom:.6rem; right:.6rem; background:rgba(0,0,0,.5); color:#fff; font-size:.8rem; padding:.15rem .55rem; border-radius:999px; pointer-events:none; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-  dl { display:grid; grid-template-columns:max-content 1fr; gap:.4rem 1.5rem; }
-  dt { font-weight:600; color:var(--muted); }
+    body {
+      font: 16px/1.6 system-ui, sans-serif;
+      color: var(--ink);
+      background: #eef2f6;
+    }
 
-  ul.maint { list-style:none; }
-  ul.maint li { padding:.5rem 0; border-bottom:1px solid #eef2f6; }
-  ul.maint li:last-child { border:0; }
-  ul.maint .date { font-weight:600; color:var(--accent); margin-right:.5rem; }
+    header {
+      background: var(--bg);
+      color: #fff;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
 
-  ul.bullets { padding-left:1.25rem; }
-  ul.bullets li { padding:.2rem 0; }
+    header h1 {
+      font-size: 2rem;
+    }
 
-  .contact a { color:var(--accent); }
-  footer { text-align:center; color:var(--muted); padding:1.5rem; font-size:.85rem; }
-</style>
+    header .price {
+      font-size: 1.4rem;
+      color: #8fd3a6;
+      margin-top: .25rem;
+    }
+
+    header .sub {
+      color: #a8c2b1;
+      margin-top: .25rem;
+    }
+
+    main {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 1rem;
+    }
+
+    section {
+      background: var(--card);
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      margin: 1rem 0;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, .08);
+    }
+
+    h2 {
+      font-size: 1.25rem;
+      margin-bottom: .75rem;
+      color: var(--accent);
+    }
+
+    /* carousel: native scroll-snap, no JS lib */
+    .gallery {
+      position: relative;
+    }
+
+    .carousel {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      border-radius: 10px;
+      scrollbar-width: none;
+    }
+
+    .carousel::-webkit-scrollbar {
+      display: none;
+    }
+
+    .carousel img {
+      flex: 0 0 100%;
+      scroll-snap-align: center;
+      width: 100%;
+      height: clamp(240px, 55vw, 520px);
+      object-fit: contain;
+      border-radius: 10px;
+      background: #12251b;
+    }
+
+    .nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      border: 0;
+      background: rgba(0, 0, 0, .45);
+      color: #fff;
+      font-size: 1.8rem;
+      line-height: 1;
+      width: 2.4rem;
+      height: 2.4rem;
+      border-radius: 50%;
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+    }
+
+    .nav:hover {
+      background: rgba(0, 0, 0, .65);
+    }
+
+    .nav.prev {
+      left: .5rem;
+    }
+
+    .nav.next {
+      right: .5rem;
+    }
+
+    .counter {
+      position: absolute;
+      bottom: .6rem;
+      right: .6rem;
+      background: rgba(0, 0, 0, .5);
+      color: #fff;
+      font-size: .8rem;
+      padding: .15rem .55rem;
+      border-radius: 999px;
+      pointer-events: none;
+    }
+
+    dl {
+      display: grid;
+      grid-template-columns: max-content 1fr;
+      gap: .4rem 1.5rem;
+    }
+
+    dt {
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    ul.maint {
+      list-style: none;
+    }
+
+    ul.maint li {
+      padding: .5rem 0;
+      border-bottom: 1px solid #eef2f6;
+    }
+
+    ul.maint li:last-child {
+      border: 0;
+    }
+
+    ul.maint .date {
+      font-weight: 600;
+      color: var(--accent);
+      margin-right: .5rem;
+    }
+
+    ul.bullets {
+      padding-left: 1.25rem;
+    }
+
+    ul.bullets li {
+      padding: .2rem 0;
+    }
+
+    .contact a {
+      color: var(--accent);
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      padding: 1.5rem;
+      font-size: .85rem;
+    }
+  </style>
 </head>
+
 <body>
-<header>
-  <h1 id="boat-name">Tubthumper</h1>
-  <div class="price" id="price">$00,000</div>
-  <div class="sub" id="tagline">Year · Make · Model · Location</div>
-  <div class="sub" style="font-style:italic">includes trailer</div>
-</header>
+  <header>
+    <h1 id="boat-name">Tubthumper</h1>
+    <div class="price" id="price">$00,000</div>
+    <div class="sub" id="tagline">Year · Make · Model · Location</div>
+    <div class="sub" style="font-style:italic">Includes trailer, Hydrovane, new sails & rigging</div>
+  </header>
 
-<main>
-  <section>
-    <div class="gallery">
-      <div class="carousel" id="carousel"></div>
-      <button class="nav prev" id="prev" aria-label="Previous photo">‹</button>
-      <button class="nav next" id="next" aria-label="Next photo">›</button>
-      <div class="counter" id="counter"></div>
-    </div>
-  </section>
+  <main>
+    <section>
+      <div class="gallery">
+        <div class="carousel" id="carousel"></div>
+        <button class="nav prev" id="prev" aria-label="Previous photo">‹</button>
+        <button class="nav next" id="next" aria-label="Next photo">›</button>
+        <div class="counter" id="counter"></div>
+      </div>
+    </section>
 
-  <section>
-    <h2>Specifications</h2>
-    <dl id="specs"></dl>
-  </section>
+    <section>
+      <h2>Specifications</h2>
+      <dl id="specs"></dl>
+    </section>
 
-  <section>
-    <h2>Equipment</h2>
-    <ul class="bullets" id="equipment"></ul>
-  </section>
+    <section>
+      <h2>Equipment</h2>
+      <ul class="bullets" id="equipment"></ul>
+    </section>
 
-  <section>
-    <h2>Recent Maintenance History</h2>
-    <ul class="maint" id="maint"></ul>
-  </section>
+    <section>
+      <h2>Recent Maintenance History</h2>
+      <ul class="maint" id="maint"></ul>
+    </section>
 
-  <section class="contact">
-    <h2>Contact</h2>
-    <p id="contact"></p>
-  </section>
-</main>
+    <section class="contact">
+      <h2>Contact</h2>
+      <p id="contact"></p>
+    </section>
+  </main>
 
-<footer>Listed by owner · no brokers</footer>
+  <footer>Listed by owner · no brokers</footer>
 
-<script>
-// ---- EDIT EVERYTHING HERE ----
-const boat = {
-  name: "Tubthumper",
-  price: "$50,000",
-  tagline: "1990 · Pacific Seacraft · Dana 24 · Cleveland, OH",
-  // Drop photo files next to this page (or use URLs). Add as many as you like.
-  photos: ["photos/1.jpg", "photos/2.jpg", "photos/3.jpg", "photos/4.jpg"],
-  specs: {
-    "Year": "1990",
-    "Make / Model": "Pacific Seacraft Dana 24",
-    "LOA (w/ bowsprit)": "27 ft 3 in",
-    "LOD": "24 ft 2 in",
-    "Beam": "8 ft 7 in",
-    "Draft": "3 ft 10 in",
-    "Displacement": "~8,000 lb",
-    "Ballast": "3,200 lb",
-    "Engine": "Yanmar 2GM20F diesel",
-    "Rig": "Cutter",
-    "Hull": "Fiberglass",
-    "Designer": "W.I.B. Crealock"
-  },
-  equipment: [
-    "Coose 1999 trailer",
-    "Garmin 8612 chartplotter",
-    "Garmin AIS800",
-    "ICOM IC-M506 VHF",
-  ],
-  maintenance: [
-    ["2026", "New LPG solenoid"],
-    ["2025", "Engine service: impeller, on-engine fuel filter, belts"],
-    ["2024", "New standing rigging"],
-    ["2024", "New running rigging"],
-    ["2024", "New Doyle mainsail, genoa, and staysail (including new furler)"],
-    ["2024", "New custom dodger"],
-    ["2024", "New 100aH AGM house batteries (x2) & starting battery"],
-    ["2024", "Chartplotter + AIS installed"],
-  ],
-  contactName: "Josh",
-  email: ["joshuagoran", "gmail.com"],   // split to dodge scrapers; assembled in JS below
-};
-// ------------------------------
+  <script>
+    // ---- EDIT EVERYTHING HERE ----
+    const boat = {
+      name: "Tubthumper",
+      price: "$50,000",
+      tagline: "1990 · Pacific Seacraft · Dana 24 · Cleveland, OH",
+      // Drop photo files next to this page (or use URLs). Add as many as you like.
+      photos: ["photos/1.jpg", "photos/2.jpg", "photos/3.jpg", "photos/4.jpg"],
+      specs: {
+        "Year": "1990",
+        "Make / Model": "Pacific Seacraft Dana 24",
+        "LOA (w/ bowsprit)": "27 ft 3 in",
+        "LOD": "24 ft 2 in",
+        "Beam": "8 ft 7 in",
+        "Draft": "3 ft 10 in",
+        "Displacement": "~8,000 lb",
+        "Ballast": "3,200 lb",
+        "Engine": "Yanmar 2GM20F diesel",
+        "Rig": "Cutter",
+        "Hull": "Fiberglass",
+        "Designer": "W.I.B. Crealock"
+      },
+      equipment: [
+        "Hydrovane Self-steering Windvane",
+        "Garmin 8612 chartplotter w/ radar",
+        "Garmin AIS800",
+        "ICOM IC-M506 VHF",
+        "Coose 1999 trailer",
+      ],
+      maintenance: [
+        ["2026", "New LPG solenoid"],
+        ["2025", "Engine service: impeller, on-engine fuel filter, belts"],
+        ["2024", "New standing rigging"],
+        ["2024", "New running rigging"],
+        ["2024", "New Doyle mainsail, genoa, and staysail (including new furler)"],
+        ["2024", "New custom dodger"],
+        ["2024", "New 100aH AGM house batteries (x2) & starting battery"],
+        ["2024", "Chartplotter + AIS installed"],
+      ],
+      contactName: "Josh",
+      email: ["joshuagoran", "gmail.com"],   // split to dodge scrapers; assembled in JS below
+    };
+    // ------------------------------
 
-document.title = boat.name + " — For Sale";
-document.getElementById("boat-name").textContent = boat.name;
-document.getElementById("price").textContent = boat.price;
-document.getElementById("tagline").textContent = boat.tagline;
-const addr = boat.email.join("@");
-const subject = encodeURIComponent(`${boat.name} boat for sale`);
-document.getElementById("contact").innerHTML =
-  `${boat.contactName} · <a href="mailto:${addr}?subject=${subject}">${addr}</a>`;
+    document.title = boat.name + " — For Sale";
+    document.getElementById("boat-name").textContent = boat.name;
+    document.getElementById("price").textContent = boat.price;
+    document.getElementById("tagline").textContent = boat.tagline;
+    const addr = boat.email.join("@");
+    const subject = encodeURIComponent(`${boat.name} boat for sale`);
+    document.getElementById("contact").innerHTML =
+      `${boat.contactName} · <a href="mailto:${addr}?subject=${subject}">${addr}</a>`;
 
-const carousel = document.getElementById("carousel");
-carousel.innerHTML =
-  boat.photos.map(src => `<img src="${src}" alt="${boat.name}" loading="lazy">`).join("");
+    const carousel = document.getElementById("carousel");
+    carousel.innerHTML =
+      boat.photos.map(src => `<img src="${src}" alt="${boat.name}" loading="lazy">`).join("");
 
-const counter = document.getElementById("counter");
-function updateCounter() {
-  const i = Math.round(carousel.scrollLeft / carousel.clientWidth) + 1;
-  counter.textContent = `${i} / ${boat.photos.length}`;
-}
-carousel.addEventListener("scroll", updateCounter, { passive: true });
-document.getElementById("prev").onclick = () => carousel.scrollBy({ left: -carousel.clientWidth });
-document.getElementById("next").onclick = () => carousel.scrollBy({ left: carousel.clientWidth });
-updateCounter();
+    const counter = document.getElementById("counter");
+    function updateCounter() {
+      const i = Math.round(carousel.scrollLeft / carousel.clientWidth) + 1;
+      counter.textContent = `${i} / ${boat.photos.length}`;
+    }
+    carousel.addEventListener("scroll", updateCounter, { passive: true });
+    document.getElementById("prev").onclick = () => carousel.scrollBy({ left: -carousel.clientWidth });
+    document.getElementById("next").onclick = () => carousel.scrollBy({ left: carousel.clientWidth });
+    updateCounter();
 
-document.getElementById("specs").innerHTML =
-  Object.entries(boat.specs).map(([k,v]) => `<dt>${k}</dt><dd>${v}</dd>`).join("");
+    document.getElementById("specs").innerHTML =
+      Object.entries(boat.specs).map(([k, v]) => `<dt>${k}</dt><dd>${v}</dd>`).join("");
 
-document.getElementById("equipment").innerHTML =
-  boat.equipment.map(e => `<li>${e}</li>`).join("");
+    document.getElementById("equipment").innerHTML =
+      boat.equipment.map(e => `<li>${e}</li>`).join("");
 
-document.getElementById("maint").innerHTML =
-  boat.maintenance.map(([d,t]) => `<li><span class="date">${d}</span>${t}</li>`).join("");
-</script>
+    document.getElementById("maint").innerHTML =
+      boat.maintenance.map(([d, t]) => `<li><span class="date">${d}</span>${t}</li>`).join("");
+  </script>
 </body>
+
 </html>
