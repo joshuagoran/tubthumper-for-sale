@@ -17,8 +17,14 @@
   h2 { font-size:1.25rem; margin-bottom:.75rem; color:var(--accent); }
 
   /* carousel: native scroll-snap, no JS lib */
-  .carousel { display:flex; overflow-x:auto; scroll-snap-type:x mandatory; gap:.5rem; border-radius:10px; }
-  .carousel img { flex:0 0 100%; scroll-snap-align:center; width:100%; height:clamp(220px,50vw,460px); object-fit:cover; border-radius:10px; background:#cdd7e1; }
+  .gallery { position:relative; }
+  .carousel { display:flex; overflow-x:auto; scroll-snap-type:x mandatory; scroll-behavior:smooth; border-radius:10px; scrollbar-width:none; }
+  .carousel::-webkit-scrollbar { display:none; }
+  .carousel img { flex:0 0 100%; scroll-snap-align:center; width:100%; height:clamp(240px,55vw,520px); object-fit:contain; border-radius:10px; background:#12251b; }
+  .nav { position:absolute; top:50%; transform:translateY(-50%); border:0; background:rgba(0,0,0,.45); color:#fff; font-size:1.8rem; line-height:1; width:2.4rem; height:2.4rem; border-radius:50%; cursor:pointer; display:grid; place-items:center; }
+  .nav:hover { background:rgba(0,0,0,.65); }
+  .nav.prev { left:.5rem; } .nav.next { right:.5rem; }
+  .counter { position:absolute; bottom:.6rem; right:.6rem; background:rgba(0,0,0,.5); color:#fff; font-size:.8rem; padding:.15rem .55rem; border-radius:999px; pointer-events:none; }
 
   dl { display:grid; grid-template-columns:max-content 1fr; gap:.4rem 1.5rem; }
   dt { font-weight:600; color:var(--muted); }
@@ -45,7 +51,12 @@
 
 <main>
   <section>
-    <div class="carousel" id="carousel"></div>
+    <div class="gallery">
+      <div class="carousel" id="carousel"></div>
+      <button class="nav prev" id="prev" aria-label="Previous photo">‹</button>
+      <button class="nav next" id="next" aria-label="Next photo">›</button>
+      <div class="counter" id="counter"></div>
+    </div>
   </section>
 
   <section>
@@ -123,8 +134,19 @@ const subject = encodeURIComponent(`${boat.name} boat for sale`);
 document.getElementById("contact").innerHTML =
   `${boat.contactName} · <a href="mailto:${addr}?subject=${subject}">${addr}</a>`;
 
-document.getElementById("carousel").innerHTML =
+const carousel = document.getElementById("carousel");
+carousel.innerHTML =
   boat.photos.map(src => `<img src="${src}" alt="${boat.name}" loading="lazy">`).join("");
+
+const counter = document.getElementById("counter");
+function updateCounter() {
+  const i = Math.round(carousel.scrollLeft / carousel.clientWidth) + 1;
+  counter.textContent = `${i} / ${boat.photos.length}`;
+}
+carousel.addEventListener("scroll", updateCounter, { passive: true });
+document.getElementById("prev").onclick = () => carousel.scrollBy({ left: -carousel.clientWidth });
+document.getElementById("next").onclick = () => carousel.scrollBy({ left: carousel.clientWidth });
+updateCounter();
 
 document.getElementById("specs").innerHTML =
   Object.entries(boat.specs).map(([k,v]) => `<dt>${k}</dt><dd>${v}</dd>`).join("");
